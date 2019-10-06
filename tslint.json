@@ -1,0 +1,32 @@
+{
+  "extends": [
+    "tslint:recommended",
+     "tslint-react",
+     "tslint-config-prettier",
+     "tslint-eslint-rules"
+    ],
+  "rules": {
+    "jsx-no-lambda": false,
+    "object-literal-sort-keys": false,
+    "interface-name": false,
+    "member-access": [true, "no-public"],
+    "ordered-imports": false,
+    "no-constant-condition": true,
+    "no-debugger": false,
+    "no-console": false,
+    "no-restricted-syntax": [
+        "error",
+        {
+            "selector": "CallExpression[callee.object.name='console'][callee.property.name!=/^(log|warn|error|info|trace)$/]",
+            "message": "Unexpected property on console object was called"
+        }
+    ]
+  },
+  "linterOptions": {
+    "exclude": [
+      "config/**/*.js",
+      "node_modules/**/*.ts",
+      "coverage/lcov-report/*.js"
+    ]
+  }
+}
